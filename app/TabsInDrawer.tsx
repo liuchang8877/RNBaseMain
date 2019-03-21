@@ -4,6 +4,11 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { createDrawerNavigator } from 'react-navigation';
 import SimpleTabs from './SimpleTabs';
 import StacksOverTabs from './StacksOverTabs';
+import {
+  createAppContainer,
+  createStackNavigator,
+  SafeAreaView,
+} from 'react-navigation';
 
 const TabsInDrawer = createDrawerNavigator({
   SimpleTabs: {
@@ -26,4 +31,6 @@ const TabsInDrawer = createDrawerNavigator({
   },
 });
 
-export default TabsInDrawer;
+const AppNavigator = createAppContainer(TabsInDrawer);
+
+export default AppNavigator;
